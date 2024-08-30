@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width" />
-        <title>Nick Rau's Portfolio</title>
+        <title>Nickolas Rau</title>
         <link rel="stylesheet" type="text/css" href="./css/portfolio_css.css">
     </head>
 
@@ -14,9 +14,11 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <!--Onclick and ondblclick functions to open and close the contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!--Breaks inserted to add space between navbar and the first heading-->
@@ -34,7 +36,7 @@
 
         <!--video text-->
         <div class="Video_Text">
-            <h1 class="white-text">Junior Game Developer</h1>
+            <h1 class="white-text">Nick Rau's Portfolio</h1>
             <strong>
                 <p class="center">
                     <q>Nothing in this world can take the place of persistence. 
@@ -53,6 +55,62 @@
             </strong>
         </div>
 
+        <!--Slideshow Section-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 7-->
+                     <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/nickprofile1.jpg" alt="Picture of me">
+                        <div class="text">I'm available to assist you on your project!</div>
+                     </div>
+                    <!-- Slide 2 of 7-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/htmlcssjs.png" alt="HTML, CSS, JS logos">
+                        <div class="text">I am a full-stack software developer,<br>trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <!-- Slide 3 of 7-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/cppy.png" alt="Python and C++ logos">
+                        <div class="text">the popular programming languages Python and C++,</div>
+                    </div>
+                    <!-- Slide 4 of 7-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                        <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
+                    </div>
+                    <!-- Slide 5 of 7-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/SQL_and_Database.jpg" alt="SQL logo">
+                        <div class="text">back end development, databases and SQL,</div>
+                    </div>
+                    <!-- Slide 6 of 7-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/unrealunity.jpg" alt="SQL logo">
+                        <div class="text">live project experience in Unreal Engine and Unity.</div>
+                    </div>
+                    <!-- Slide 7 of 7-->
+                    <div class="mySlides fade">
+                        <img class="Slideshow_Images" src="images/contact.jpg" alt="Contact Img">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                    </div>
+                    <!-- Previous and next buttons -->
+                     <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                     <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adds a space between the slideshow images and the dots-->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                </div>
+            </div>
+        </div>
+
         <!--about section-->
         <div class="Row" id="About">
             <!--Left Column-->
@@ -67,7 +125,7 @@
                     <br>
                     <br>I am currently enrolled as a student of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Game Developer Boot Camp, where I am learning the skills used in the industry and gaining experience in the following web and programming languages: HTML, CSS, JavaScript, SQL, C#, C++ and more. 
                     <br>
-                    <br>When I graduate as a full-stack Junior Game Developer, I would love an opportunity to work with you on your project. <a href="#Contact">Contact</a> me below!
+                    <br>When I graduate as a full-stack Junior Game Developer, I would love an opportunity to work with you on your project. <a onclick="openForm()" class="contact">Contact</a> me below!
                 </p>
             </div>
         </div>
@@ -85,28 +143,27 @@
             </div>
             <!--Right Column-->
             <div class="Column_2">
-                <a href=".." target="_blank"><img src="./images/GitHub.png" alt="GitHub Logo"></a>
+                <a href="https://github.com/Mawci" target="_blank"><img src="./images/GitHub.png" alt="GitHub Logo"></a>
             </div>
         </div>
 
-        <!--CONTACT SECTION-->
-        <div class="Row" id="Contact">
-            <!--CONTACT IMAGE, LEFT COLUMN-->
-            <div class="Column_2 Column_tall">
-                <img src="./images/message.png" alt="Contact_Image">
-            </div>
-            <!--CONTACT FORM, RIGHT COLUMN-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="https://formspree.io/f/xovalaqn"method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+        <!--CONTACT Form-->
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/xovalaqn" method="POST" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Please enter your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Please enter your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" name="email" placeholder="Please enter your email here" required>
+                    <label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Type your message here" name="message">
+
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
@@ -118,5 +175,6 @@
                 <br>
             </p>
         </footer>
+        <script src="js/portfolio.js" defer></script>
     </body>
 </html>
