@@ -333,6 +333,53 @@ footer{
     background-color: #4d4d4d;
 }
 
+.Column_3 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 450px;
+    background-color: #4d4d4d;
+}
+
+.Column_4 {
+    float: left;
+    width: 50%;
+    /* This ensures the column takes up half of the page width */
+    padding: 1.6%;
+    height: 450px;
+    /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
+    background-color: #f4f4f4;
+    /* Sets the background color of the columns with class Column_1 */
+}
+
+.Column_6 {
+    float: left;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* This ensures the column takes up half of the page width */
+    padding: 1.6%;
+    height: 900px;
+    /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
+    background-color: #4d4d4d;
+    /* Sets the background color of the columns with class Column_1 */
+}
+
+.Column_5 {
+    float: left;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* This ensures the column takes up half of the page width */
+    padding: 1.6%;
+    height: 900px;
+    /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
+    background-color: #121211;
+    /* Sets the background color of the columns with class Column_1 */
+}
+
 /* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form  while keeping the rest of the formatting from Column_1 or Column_2 */
 .Column_Tall{
     padding-top: 3.5%;
@@ -352,9 +399,9 @@ footer{
 
 .Pop_Up_Button{
     position:fixed;/*element is positioned relative to the viewport and stays in the same location no matter what*/
-    bottom: 1.75vw; /*positions the button slightly up from the bottom of the viewport*/
-    right: 1.75vw;/*positions the button slightly right from the side of the viewport*/
-    width: 25vw;/*sets the width relative to the viewport width*/
+    bottom: .5vw; /*positions the button slightly up from the bottom of the viewport*/
+    right: .5vw;/*positions the button slightly right from the side of the viewport*/
+    width: 12vw;/*sets the width relative to the viewport width*/
     background-color: white;
     color: black;
     border: solid black;
@@ -367,12 +414,12 @@ footer{
 
 @keyframes movePopup{
     from{right: -40vw;}
-    to{right: 1.75vw;}
+    to{right: .5vw;}
 }
 
 @-webkit-keyframes movePopup {
     from {right: -40vw;}
-    to {right: 1.75vw;}
+    to {right: .5vw;}
 }
 
 /*styling for the contact form*/
