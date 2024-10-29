@@ -386,6 +386,11 @@ footer{
     height: 450px
 }
 
+.video_container{
+    height: 768px;
+    width: 1080px;
+    float: center;
+}
 /* This inserts something after the content of selected elements (in this case the elements with class "Row") */
 .Row:after{
     content: "";/* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
