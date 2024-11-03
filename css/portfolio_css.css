@@ -42,6 +42,20 @@ h1:hover{
     padding-top: 10vh; /*Adds padding (equal to 10% of the viewport height) to the top of the portfolio title text*/
 }
 
+h1.title-text {
+    text-transform: uppercase;
+    /* Capitalizes all h1 text */
+    font-family: "Trebuchet MS", Optima;
+    /* Sets the font family */
+    text-align: center;
+    /* Centers the heading */
+    margin-top: 2%;
+    /* Adds a small margin above the h1 */
+    margin-bottom: 1%;
+    /* Adds space below the h1 to separate it from the iframe */
+    color: #ffffff;
+    /* Ensures the text color is white for visibility */
+}
 /*paragraph elements*/
 p{
     font-family: Perpetua, Rockwell Extra Bold;
@@ -355,12 +369,13 @@ footer{
 .Column_6 {
     float: left;
     width: 100%;
-    align-items: center;
     display: flex;
-    justify-content: center;
-    /* This ensures the column takes up half of the page width */
+    justify-content: center;/* This ensures the column takes up half of the page width */
+    flex-direction: column;/* Stacks child elements vertically */
+    align-items: center;/* Centers child elements horizontally */
+    text-align: justify;
     padding: 1.6%;
-    height: 900px;
+    height: auto;
     /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
     background-color: #4d4d4d;
     /* Sets the background color of the columns with class Column_1 */
@@ -369,15 +384,52 @@ footer{
 .Column_5 {
     float: left;
     width: 100%;
-    align-items: center;
     display: flex;
+    flex-direction: column; /* Stacks child elements vertically */
+    align-items: center; /* Centers child elements horizontally */
     justify-content: center;
+    text-align: justify;
     /* This ensures the column takes up half of the page width */
     padding: 1.6%;
-    height: 900px;
+    height: auto;
     /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
     background-color: #121211;
     /* Sets the background color of the columns with class Column_1 */
+}
+
+.Column_5 video {
+    width: 1350px;
+    height: 700px;
+    max-width: 100%;/* Keeps video responsive within the container */
+    max-height: 100%;
+    object-fit: cover;/* Ensures video fills the space without distortion */
+}
+
+.Column_6 video {
+    width: 1350px;
+    height: 800px;
+    max-width: 100%;/* Keeps video responsive within the container */
+    max-height: 100%;
+    object-fit: cover;/* Ensures video fills the space without distortion */
+}
+
+#webgl_iframe {
+    width: 100%;
+        /* Ensures it takes the full width of the container */
+        max-width: 1350px;
+        /* Prevents it from exceeding the original size */
+        height: 800px;
+        /* Sets the height */
+        max-height: 100%;
+        /* Prevents height issues on smaller screens */
+        border: none;
+        /* Removes any borders */
+    /*width: 1350px;
+    height: 800px;
+    max-width: 100%;
+    Ensures iframe remains responsive within the container
+    max-height: 100%;
+    Allows iframe to scale properly on smaller screens */
 }
 
 /* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form  while keeping the rest of the formatting from Column_1 or Column_2 */
@@ -391,6 +443,78 @@ footer{
     width: 1080px;
     float: center;
 }
+
+.video-description {
+    font-family: "Trebuchet MS", Optima;
+    /* Matches the font of the title */
+    color: #ffffff;/* Same color as the title */
+    text-align: justify;/* Centers the text */
+    margin-top: 1%;/* Adds space between the title and the description */
+    margin-bottom: 2%;/* Adds space between the description and the video */
+    padding: 0 5%;/* Adds horizontal padding for better readability */
+    line-height: 1.6;/* Increases line height for better readability */
+    font-size: 1.2rem;/* Default font size */
+}
+
+.video-description-list {
+    font-family: "Trebuchet MS", Optima;/* Matches the font style */
+    color: #ffffff;/* Matches the text color */
+    text-align: justify;/* Justifies the list items */
+    margin-top: 1%;/* Adds space between the description and the list */
+    margin-bottom: 2%;/* Adds space between the list and the video */
+    padding: 0 5%;/* Adds horizontal padding for better readability */
+    line-height: 1.6;/* Consistent line height for readability */
+    font-size: 1.2rem;/* Matches the font size of the description */
+    list-style-type: disc;/* Default bullet style */
+}
+
+.video-description-list li{
+    margin-bottom:10px;
+
+}
+
+.play-button {
+    display: inline-block;
+    margin-top: 2%;/* Space between the video and the button */
+    padding: 15px 50px;/* Adjusts padding for a good button size */
+    background-color: #ffffff;/* Matches the Column_5 background */
+    color: #121211;/* Button text color */
+    font-family: "Trebuchet MS", Optima;/* Matches the text font */
+    font-size: 1.2rem;/* Font size for readability */
+    text-transform: uppercase;/* Ensures the text is uppercase */
+    text-decoration: none;/* Removes underline */
+    text-align: center;/* Centers the text */
+    border: 2px solid #121211;/* Adds a border to match the theme */
+    border-radius: 8px;/* Rounded corners */
+    cursor: pointer;/* Changes cursor to a pointer on hover */
+    transition: background-color 0.3s, color 0.3s;/* Smooth transition for hover */
+}
+
+/* Hover effect for the button */
+.play-button:hover {
+    background-color: #4d4d4d;
+        /* Changes background color on hover */
+        color: #ffffff;
+        /* Changes text color to white on hover */
+}
+
+.custom-link {
+    color: #ffffff;
+    /* Sets the text color to white */
+    
+    
+    font-weight: bold;
+    /* Makes the link text stand out */
+    transition: color 0.3s;
+    /* Smooth transition for color change */
+}
+
+/* Hover effect for the link */
+.custom-link:hover {
+    color: #4d4d4d;
+    /* Changes the color when hovered */
+}
+
 /* This inserts something after the content of selected elements (in this case the elements with class "Row") */
 .Row:after{
     content: "";/* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
@@ -605,5 +729,81 @@ button:hover, .form-container .btn:hover{
     img {
         height: 100px;
         margin-top: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Column_5 video {
+        width: 100%;
+        /* Takes the full width of the container */
+        height: auto;
+        /* Keeps the aspect ratio intact */
+    }
+}
+
+@media (max-width: 768px) {
+    .Column_6 video {
+        width: 100%;
+        /* Takes the full width of the container */
+        height: auto;
+        /* Keeps the aspect ratio intact */
+    }
+}
+
+@media (max-width: 768px) {
+    h1.white-text {
+        font-size: 1.5rem;
+        /* Adjusts font size for mobile readability */
+        margin-top: 5%;
+        /* Adds space for better visual balance */
+    }
+
+    #webgl_iframe {
+        height: auto;
+        /* Adjusts height to maintain aspect ratio */
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .video-description {
+        font-size: 1rem;
+        /* Reduces font size for smaller screens */
+        margin-top: 2%;
+        /* Adjusts spacing for a better layout */
+        margin-bottom: 3%;
+        /* Adds more space below the description */
+        padding: 0 3%;
+        /* Reduces padding to fit better on smaller viewports */
+    }
+}
+
+/* Media query for very small screens (e.g., mobile devices) */
+@media (max-width: 480px) {
+    .video-description {
+        font-size: 0.9rem;
+        /* Further reduces font size */
+        padding: 0 2%;
+        /* Minimizes padding */
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .video-description-list {
+        font-size: 1rem;
+        /* Adjusts font size for smaller screens */
+        padding: 0 3%;
+        /* Reduces padding for smaller viewports */
+    }
+}
+
+/* Media query for very small screens (e.g., mobile devices) */
+@media (max-width: 480px) {
+    .video-description-list {
+        font-size: 0.9rem;
+        /* Further reduces font size */
+        padding: 0 2%;
+        /* Minimizes padding */
     }
 }
