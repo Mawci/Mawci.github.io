@@ -1,0 +1,1043 @@
+/* Body Styling */
+body {
+    display: flex;
+    /* Use flexbox to ensure footer placement */
+    flex-direction: column;
+    /* Arrange content vertically */
+    min-height: 100vh;
+    /* Ensure body takes the full viewport height */
+    margin-top: 8rem;
+    font-family: 'Arial', sans-serif;
+}
+
+body::before {
+    content: '';
+    /* Allows background styling */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/background.jpg');
+    /* Path to background image */
+    background-size: cover;
+    /* Ensures the image covers the entire viewport */
+    background-position: center;
+    /* Centers the image */
+    background-attachment: fixed;
+    /* Keeps the background static during scrolling */
+    filter: none;
+    /* Apply greyscale to the background image */
+    z-index: -1;
+    /* Keeps it behind all content */
+}
+
+/* Header Styling */
+header {
+    padding: -5rem !important;
+    position:fixed;
+        /* Fixes the header to the top of the viewport */
+        top: 0;
+        /* Ensures it stays at the top */
+        width: 100%;
+        /* Makes the header span the full width */
+        z-index: 10;
+        /* Ensures it stays above other elements */
+    background-color: transparent;
+    color: #ffffff;
+    margin-bottom: -2rem;
+    
+}
+
+header .logo {
+    height: calc(4rem + 1.5rem + 0.5rem);
+    /* Dynamic height: Name + Titles + Spacing */
+    margin-right: 15px;
+    /* Space between the logo and text */
+    flex-shrink: 0;
+    /* Prevent the logo from shrinking */
+}
+
+header h1 {
+    font-size: 4rem;
+    /* Large font size for the name */
+    margin: 0;
+    /* No extra margin */
+    color: #037ffc;
+        /* Updated to the requested blue color */
+    font-family: 'Futura', sans-serif; /* Apply Futura to the name */
+}
+
+header p {
+    font-size: 1.5rem;
+    /* Font size for titles */
+    margin: 0.5rem 0 0;
+    /* Space below the name */
+    font-family: 'Futura', sans-serif;
+        /* Apply Futura to job titles */
+}
+
+/* Navbar Styling */
+.navbar {
+    margin-top: -.5rem;
+    margin-bottom: -.5rem;
+    /* Reduce spacing above the navbar */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+   
+    /* Larger font for navigation links */
+}
+
+.nav-item {
+    margin-right: 1.5rem;
+    /* Add space to the right of each item */
+}
+
+/* Optional: Remove margin for the last item to keep alignment neat */
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-link i {
+    font-size: 1.5rem;
+    /* Icon size */
+    color: #ffffff;
+    margin-left: 10px;
+}
+
+.nav-link i:hover {
+    color: #00acee;
+    /* Highlight icons on hover */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #037ffc;
+    /* Updated to the requested blue color on hover */
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+/* Project Images */
+.project-image {
+    width: 100%;
+    /* Ensures images align with their column width */
+    max-width: 500px;
+    /* Limit max size for large screens */
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    /* Center images horizontally */
+    height: 400px;
+    height:100%;
+    /* Maintain aspect ratio */
+    transition: transform 0.3s ease-in-out;
+        /* Smooth hover animation */
+
+}
+
+.project-image:hover {
+    transform: scale(1.1);
+    /* Enlarges the image slightly on hover */
+}
+
+/* Section Titles */
+.project-section-title {
+    
+            text-align: left;
+            font-size: 3rem !important;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            /* Space between title and images */
+            color: #037ffc;
+            /* Ensures text color consistency */
+            font-family: 'Monsterrat', sans-serif;
+            /* Apply Futura to section titles */
+            text-shadow:
+                -1px -1px 0 #1a1a1a,
+                /* Top-left */
+                1px -1px 0 #1a1a1a,
+                /* Top-right */
+                -1px 1px 0 #1a1a1a,
+                /* Bottom-left */
+                1px 1px 0 #1a1a1a;
+            /* Bottom-right */
+        
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-container {
+    position: relative;
+    /* Create a positioning context for the overlay */
+    display: inline-block;
+}
+
+
+
+.description-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+    /* Smooth fade-in/out */
+    z-index: 2;
+    /* Ensure overlay appears above the video */
+}
+
+.description-overlay .game-title {
+    color: white;
+    /* Title text color */
+    font-size: 1.5rem;
+    /* Adjust font size as needed */
+    font-weight: bold;
+    /* Emphasize the title */
+    text-align: center;
+}
+
+.video-container:hover .description-overlay {
+    opacity: 1;
+    /* Show overlay on hover */
+}
+
+.project-video {
+    width: 100%;
+    /* Full width within the column */
+    max-width: 500px;
+    /* Limit video size */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    visibility: visible;
+    margin: 0 auto;
+    /* Center-align within the column */
+    border-radius: 8px;
+    /* Optional: Rounded corners for videos */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: Subtle shadow for aesthetics */
+}
+
+.project-video-summary {
+    width: 100%;
+    /* Full width within the column */
+    max-width: 500px;
+    /* Limit video size */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    visibility: visible;
+    margin: 0 auto;
+    /* Center-align within the column */
+    border-radius: 8px;
+    /* Optional: Rounded corners for videos */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: Subtle shadow for aesthetics */
+}
+
+/* Hover Effect for Videos */
+.project-video:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+    transition: transform 0.3s ease;
+}
+
+.summary-video {
+    width: 100%;
+    /* Full width within the column */
+    max-width: 700px;
+    /* Limit video size */
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    visibility: visible;
+    margin: 0 auto;
+    /* Center-align within the column */
+    border-radius: 8px;
+    /* Optional: Rounded corners for videos */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: Subtle shadow for aesthetics */
+}
+.image-topmargin{
+    margin-top: 4rem;
+}
+/* Footer Styling */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+    /* Push footer to the bottom when content is minimal */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-section-title {
+        font-size: 1.8rem;
+        /* Slightly smaller font for headings */
+    }
+
+    .project-image {
+        width: 100%;
+        /* Images take full container width on smaller devices */
+        max-width: 100%;
+        /* No limit on small screens */
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        /* Slightly smaller font for the name */
+    }
+
+    header p {
+        font-size: 1.2rem;
+        /* Slightly smaller font for the description */
+    }
+
+    header .logo {
+        height: calc(4rem + 1.5rem + 0.5rem * 0.8);
+        /* Smaller logo for smaller screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .project-image {
+        max-width: 500px;
+        /* Larger images on wider screens */
+    }
+
+    .project-section-title {
+        font-size: 2.2rem;
+        /* Larger heading on large screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-item {
+        margin-right: 1rem;
+        /* Smaller spacing on smaller screens */
+    }
+}
+/* Project Summary Section Styling */
+#project-summary {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    color: #ffffff;
+}
+
+.project-title {
+    padding-top: 1rem;
+    font-size: 3rem !important;
+    font-weight: bold;
+    color: #037ffc;
+    font-family: 'Futura', sans-serif;
+    text-shadow:
+            -1px -1px 0 #1a1a1a,
+            /* Top-left */
+            1px -1px 0 #1a1a1a,
+            /* Top-right */
+            -1px 1px 0 #1a1a1a,
+            /* Bottom-left */
+            1px 1px 0 #1a1a1a;
+        /* Bottom-right */
+}
+
+.details-title {
+    font-size: 3rem;
+    color: #00acee;
+    text-shadow:
+            -1px -1px 0 #1a1a1a,
+            /* Top-left */
+            1px -1px 0 #1a1a1a,
+            /* Top-right */
+            -1px 1px 0 #1a1a1a,
+            /* Bottom-left */
+            1px 1px 0 #1a1a1a;
+        /* Bottom-right */
+    text-decoration: underline;
+        /* Add underline */
+}
+
+.details-title-0 {
+    font-size: 3rem;
+    color: #00acee;
+    text-shadow:
+        -1px -1px 0 #1a1a1a,
+        /* Top-left */
+        1px -1px 0 #1a1a1a,
+        /* Top-right */
+        -1px 1px 0 #1a1a1a,
+        /* Bottom-left */
+        1px 1px 0 #1a1a1a;
+    /* Bottom-right */
+    text-decoration: underline;
+    /* Add underline */
+    -webkit-text-stroke: 1px #0e1f81;
+    /* Outline text for WebKit browsers */
+    text-stroke: 1px #0e1f81;
+    /* Fallback for other browsers */
+}
+
+.details-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color:#ffffff;
+}
+
+.statistics-title {
+    font-size: 1.5rem;
+    color: #00acee;
+    text-align: left;
+}
+
+.game-statistics2 li {
+    text-align: left;
+    line-height: 1.2;
+    /* Adjust this value to make lines closer together */
+    margin: 0;
+    /* Optional: Remove extra spacing around the list */
+    padding: 0;
+    /* Optional: Remove extra padding */
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.game-statistics li {
+    text-align: left;
+    line-height: 1.2;
+        /* Adjust this value to make lines closer together */
+        margin: 0;
+        /* Optional: Remove extra spacing around the list */
+        padding: 0;
+        /* Optional: Remove extra padding */
+    color: #ffffff;
+}
+
+/* Bullet Points Styling */
+.game-statistics2 {
+    list-style-type: disc;
+    /* Bulleted list */
+    margin-left: 2rem;
+    /* Indentation for bullets */
+    padding-left: 0;
+    /* Prevent double padding */
+    line-height: 1.8;
+    /* Better readability */
+    font-size: 1.2rem;
+    /* Match previous text size */
+    color: #ffffff;
+    /* Ensure bullets match the theme */
+}
+
+/* Bullet Points Styling */
+.game-statistics {
+    list-style-type: disc;
+    /* Bulleted list */
+    margin-left: 2rem;
+    /* Indentation for bullets */
+    padding-left: 0;
+    /* Prevent double padding */
+    line-height: 1.8;
+    /* Better readability */
+    font-size: 1.2rem;
+    /* Match previous text size */
+    color: #ffffff;
+    /* Ensure bullets match the theme */
+}
+
+.game-statistics3 {
+    list-style-type: disc;
+    /* Bulleted list */
+    margin-left: 2rem;
+    /* Indentation for bullets */
+    padding-left: 0;
+    /* Prevent double padding */
+    line-height: 1.8;
+    /* Better readability */
+    font-size: 1.2rem;
+    /* Match previous text size */
+    color: #ffffff;
+    /* Ensure bullets match the theme */
+}
+
+.game-statistics3 li {
+    margin-left: 3rem !important;
+    text-align: left;
+    line-height: 1.2;
+    /* Adjust this value to make lines closer together */
+    margin: 0;
+    /* Optional: Remove extra spacing around the list */
+    padding: 0;
+    /* Optional: Remove extra padding */
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.img-fluid {
+    width: 100%;
+    /* Ensure the image spreads across the full column */
+    border-radius: 8px;
+    /* Rounded corners */
+    margin-bottom: 2rem;
+    /* Add spacing below the media */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for aesthetic */
+}
+
+/* Media Thumbnails */
+.img-thumbnail {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid #037ffc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.1);
+}
+
+/* Table of Contents Styling with Rounded Corners and Blue Outline */
+.table-of-contents-container {
+    width: 100%;
+    /* Full width of the viewport */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Slightly transparent background */
+    padding: 1.5rem 0;
+    /* Vertical padding */
+    border-radius: 12px;
+    /* Rounded corners */
+    border: 3px solid #037ffc;
+    /* Blue outline */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Optional shadow for aesthetics */
+}
+
+.table-of-contents-container h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.table-of-contents-container .btn {
+    font-size: 1.2rem;
+    border: 2px solid #00acee;
+    color: #00acee;
+    background-color: transparent;
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    /* Larger button size for emphasis */
+    border-radius: 8px;
+    /* Rounded buttons */
+    transition: all 0.3s ease-in-out;
+}
+
+.table-of-contents-container .btn:hover {
+    background-color: #00acee;
+    color: #ffffff;
+}
+
+.project-summary-content {
+    max-width: 1200px;
+    /* Limit the width of the content */
+    margin: 0 auto;
+    /* Center the content horizontally */
+    padding: 0 2rem;
+    padding-top: 2rem;
+    /* Add horizontal padding for breathing space */
+}
+
+/* Top Button */
+.btn-info {
+    background-color: #037ffc;
+    /* Consistent with theme */
+    color: #ffffff;
+    padding: 0.75rem 2rem;
+    /* Larger button size for emphasis */
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    /* Rounded button */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-info:hover {
+    background-color: #005bb5;
+    /* Slightly darker blue for hover effect */
+}
+
+/* Top Button Styling (Consistent with Table of Contents Buttons) */
+.btn-outline-info {
+    font-size: 1.2rem;
+    border: 2px solid #037ffc;
+    /* Blue border */
+    color: #037ffc;
+    /* Blue text */
+    background-color: transparent;
+    /* Transparent background */
+    padding: 0.75rem 2rem;
+    /* Larger size for emphasis */
+    border-radius: 8px;
+    /* Rounded corners for consistency */
+    transition: all 0.3s ease-in-out;
+    /* Smooth hover effect */
+}
+
+.btn-outline-info:hover {
+    background-color: #037ffc;
+    /* Full blue background on hover */
+    color: #ffffff;
+    /* White text on hover */
+}
+/************************ Image Slideshow*********************/
+/* Main Slider Styling */
+.swiper.main-slider {
+    width: 100%;
+    height: 400px;
+    /* Adjust height as needed */
+}
+
+.swiper.main-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Optional shadow */
+}
+
+/* Thumbnail Slider Styling */
+.swiper.thumbnail-slider {
+    width: 100%;
+    height: 100px;
+    /*display:none;
+     Adjust height as needed */
+}
+
+.swiper.thumbnail-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: default;
+    display: none;
+}
+
+.about-me-image {
+    border: 2px solid #037ffc;
+    max-height: 500px;
+    /* Adjust this value to control the maximum height */
+    width: auto;
+    /* Maintain the aspect ratio */
+    object-fit: cover;
+    /* Ensure the image fills the height without distortion */
+}
+
+
+
+/* Navigation Buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #037ffc;
+    /* Match theme color */
+    transition: color 0.3s ease-in-out;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    color: #005bb5;
+    /* Darker blue on hover */
+}
+
+/* Fullscreen Overlay */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.fullscreen-overlay .close-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* Image Grid Layout */
+.image-grid-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Space between images */
+    margin-bottom: 1.5rem;
+    /* Spacing below rows */
+}
+
+.image-grid-row-half {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Space between images */
+    margin-bottom: 1.5rem;
+    /* Spacing below rows */
+}
+
+.image-grid-row.centered {
+    justify-content: center;
+    /* Center the single bottom image */
+}
+
+/* Image Styling */
+.summary-image {
+    width: 45%;
+    /* Set image width for two images on top row */
+    height: auto;
+    border-radius: 8px;
+    /* Rounded corners */
+    object-fit: cover;
+    /* Maintain aspect ratio */
+    /*transition: transform 0.3s ease-in-out;
+    /* Add hover effect */
+    /*cursor: pointer;
+    /* Indicate images are clickable */
+}
+
+.caption-text {
+    font-size: 0.9rem;
+    /* Adjust font size */
+    color: #6c757d;
+    /* Muted color */
+    margin-top: 0.5rem;
+    /* Space between image and caption */
+    text-align: center;
+    /* Center the text */
+}
+
+.clickable-image {
+    cursor: pointer;
+}
+
+.padding-12{
+    margin-top: 2rem;
+}
+
+
+
+/* Title and Text Styling */
+.details-title-1 {
+    font-size: 2rem;
+    color: #00acee;
+    margin-top: 1rem;
+}
+
+.details-title-2 {
+    font-size: 1.5rem;
+    color: #00acee;
+    margin-top: 2rem;
+}
+
+.details-text-1 {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: justify;
+}
+
+/* Top Row Images */
+.image-grid-row img {
+    width: 45%;
+    /* Top row images will take up 45% of the row each */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Centered Bottom Image */
+.image-grid-row.centered img {
+    width: 90%;
+    /* Bottom image will span 90% of the row */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.image-grid-row-half img {
+    width: 60%;
+    /* Top row images will take up 45% of the row each */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* Problem Solving Section Styling */
+.problem-solving {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Optional: Slight background for contrast */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+.problem-solving h3,
+.problem-solving h4 {
+    color: #FFD700;
+    /* Gold color for titles */
+    margin-bottom: 1rem;
+}
+
+.problem-solving h4 {
+    font-size: 1.5rem;
+}
+
+.problem-solving p,
+.problem-solving ul {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #ffffff;
+    /* White text */
+}
+
+.problem-solving ul {
+    padding-left: 2rem;
+    /* Indent for bulleted lists */
+    margin-bottom: 1.5rem;
+    /* Spacing between lists */
+}
+
+.problem-solving ul ul {
+    padding-left: 2rem;
+    /* Indent for nested lists */
+    margin-top: 0.5rem;
+}
+
+.problem-solving li {
+    margin-bottom: 0.8rem;
+    /* Spacing between list items */
+}
+
+.problem-solving li ul li {
+    list-style-type: circle;
+    /* Use a circle for second-level bullets */
+}
+
+/* Retrospective Section Styling */
+.retrospective {
+    margin-top: 2rem;
+    padding: 1rem;
+    /* Optional: Add a background */
+    border-radius: 8px;
+    /* Optional: Rounded corners */
+}
+
+.retrospective h3 {
+    font-size: 2rem;
+    color: #cccccc;
+    /* Light gray for section title */
+    margin-bottom: 1.5rem;
+}
+
+.retrospective-section {
+    margin-bottom: 1.5rem;
+    /* Space between sections */
+}
+
+.retrospective-section h4 {
+    font-size: 1.5rem;
+    color: #00acee;
+    /* White text for subsection titles */
+    margin-bottom: 0.5rem;
+}
+
+.retrospective-section ul {
+    padding-left: 2rem;
+    /* Indent for bulleted lists */
+}
+
+.retrospective-section li {
+    font-size: 1.2rem;
+    color: #ffffff;
+    /* White text for list items */
+    margin-bottom: 0.8rem;
+    /* Spacing between list items */
+    line-height: 1.6;
+    /* Consistent spacing for readability */
+}
+
+.download-card {
+    display: inline-block;
+    background-color: #f8f9fa;/* Light gray background */
+    padding: 20px;
+    margin-top: 2rem;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* Indicate clickability */
+    text-decoration: none;
+    color: inherit;
+    /* Ensure text color matches */
+}
+
+.download-card-2 {
+    display: inline-block;
+    background-color: #696969;
+    /* Light gray background */
+    padding: 20px;
+    margin-top: 2rem;
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* Indicate clickability */
+    text-decoration: none;
+    color: inherit;
+    /* Ensure text color matches */
+}
+.left-align {
+    text-align: left;
+    /* Aligns the content within the parent container to the left */
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow on hover */
+}
+
+.download-card-2:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    /* Stronger shadow on hover */
+}
+
+.download-link {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Match text color */
+}
+
+.download-icon img {
+    width: 100px;
+    /* Adjust icon size */
+    margin-bottom: 10px;
+    /* Space between icon and text */
+}
+
+.download-icon-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.download-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.download-title-2 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+pre,
+code {
+    background-color: #ffffff !important;
+    /* GitHub dark theme background */
+
+    /* Light text color */
+    border-radius: 6px;
+    /* Rounded edges */
+    padding: 1rem;
+    /* Space around the code block */
+    font-family: 'Courier New', Courier, monospace !important;
+    /* Fixed-width font */
+    font-size: 1rem;
+    /* Readable text size */
+    line-height: 1.6;
+    /* Line height for better readability */
+    overflow-x: auto;
+    /* Horizontal scrolling for long lines */
+    white-space: pre;
+    /* Preserve whitespace */
+    text-align: left;
+    /* Align text to the left */
+}
+
+pre {
+    margin: 1rem auto;
+    /* Center the code block within its container */
+    max-width: 100%;
+    /* Ensure the block fits within the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for better visibility */
+    max-height: 500px;
+    /* Set maximum height for code blocks */
+    overflow-y: auto;
+    /* Enable vertical scrolling for long code */
+}
+
+code {
+    display: block;
+    /* Ensure code is treated as a block element */
+    background-color: transparent;
+    /* No additional background for inline code */
+    padding: 0;
+    /* Remove unnecessary padding */
+}
