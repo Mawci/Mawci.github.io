@@ -2204,18 +2204,38 @@ private void Awake()
                 const videoLinks = document.querySelectorAll("a[data-summary-id]"); // Video links with data-summary-id
                 const tableOfContentsLinks = document.querySelectorAll(".btn-outline-info"); // Table of Contents buttons
                 const headerOffset = 200; // Adjust this value based on your header height
+                const lazySections = document.querySelectorAll("section.d-none");
+
+                // Lazy Loading Sections
+            
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove("d-none"); // Remove 'd-none' when in view
+                        observer.unobserve(entry.target); // Stop observing the section
+                    }
+                });
+            }, { rootMargin: "0px 0px 500px 0px" }); // Preload sections 200px before entering view
+
+            lazySections.forEach(section => sectionObserver.observe(section)); // Observe each lazy section
 
                 // Helper function to scroll with an offset
                 function scrollToWithOffset(sectionId) {
                     const target = document.getElementById(sectionId);
                     if (target) {
+
+                    
                         const elementPosition = target.offsetTop; // Position relative to the document
                         const offsetPosition = elementPosition - headerOffset;
+
+                        
 
                         window.scrollTo({
                             top: offsetPosition, // Scroll to the calculated offset position
                             behavior: "smooth", // Enable smooth scrolling
                         });
+                        
                     }
                 }
 
