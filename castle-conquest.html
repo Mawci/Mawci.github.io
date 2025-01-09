@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickolas Rau Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style_with_dropdowns.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="bg-dark text-light">
+        <!-- Logo and Header Text -->
+        <div class="d-flex justify-content-center align-items-center py-3">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <div class="text-center">
+                <h1 class="display-3 fw-bold m-0">Nickolas Rau</h1>
+                <p class="fs-5 m-0">Game Developer | Programmer | Designer</p>
+            </div>
+        </div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Projects
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                                <li><a class="dropdown-item" href="project-1.html">Can You Survive 10 Waves? - UE5</a></li>
+                                <li><a class="dropdown-item" href="space-invaders.html">Space Invaders - Unity</a></li>
+                                <li><a class="dropdown-item" href="hi-lo.html">High Low - Unity</a></li>
+                                <li><a class="dropdown-item" href="#">Castle Conquest - Unity</a></li>
+                                <li><a class="dropdown-item" href="bat-2-the-bone.html">Bat to the Bone - Unity</a></li>
+                                <li><a class="dropdown-item" href="clickin-crates.html">Clickin' Crates - Unity</a></li>
+                                <li><a class="dropdown-item" href="blackjack.html">Black Jack - C#</a></li>
+                                <li><a class="dropdown-item" href="pong.html">Pong - UE5</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="https://docs.google.com/document/d/1ln9imlyXhzHqpUdAID31VPaDxj3qWDtxLvgNpaBl1HY/edit?usp=sharing"
+                                target="_blank">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <!--
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>-->
+                        <!-- LinkedIn Icon -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com/in/nickolasrau/" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <!-- GitHub Icon -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/Mawci" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Project Summary Section for Castle Conquest  -->
+    <section id="project-summary-3" class="d-none container my-5">
+        <div class="project-summary-content">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="project-title">Castle Conquest</h1>
+                </div>
+                <div class="col-md-6">
+    
+                </div>
+                <div class="col-md-6">
+                    <h2 class="details-title-0">Overview</h2>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6 text-center">
+                        <img src="images/CastleConquestSS.png" alt="Project Image" class="img-fluid rounded shadow">
+    
+    
+                        <div class="download-card text-center">
+                            <a href="https://play.unity.com/en/games/872a699f-bd12-4f2a-b93b-18cf72dfbbc8/castle-conquest-2d"
+                                target="_blank" class="download-link">
+                                <div class="download-icon">
+                                    <img src="images/unityPlay.png" alt="Attachment Icon" class="img-fluid">
+                                </div>
+                                <p class="download-title">Play In Browser</p>
+                            </a>
+                        </div>
+    
+                    </div>
+                    <div class="col-md-6">
+                        <!--<h2 class="details-title">Overview</h2>-->
+                        <p class="details-text">
+                        <ul class="game-statistics list-unstyled">
+                            <li>Gained hands-on experience with Unity’s Tilemap and RuleTile systems, efficiently designing
+                                dynamic and reusable
+                                environments while streamlining the level creation process.</li>
+                            <li>Developed expertise in 2D collision detection and physics, ensuring responsive and realistic
+                                interactions between
+                                game
+                                objects, contributing to fluid gameplay mechanics</li>
+                            <li>Designed smooth sprite animations by creating animation clips, leveraging animation events
+                                to trigger precise
+                                gameplay
+                                responses, and enhancing visual feedback for players.</li>
+                            <li>Implemented a Singleton Game Manager, centralizing control over key game systems like score
+                                tracking, level
+                                progression,
+                                and player health for efficient code organization and scalability.</li>
+                            <li>Utilized layers, tags, and sorting layers to manage object interactions, streamline
+                                collision detection, and ensure
+                                proper visual hierarchy in the game world.</li>
+                            <li>Integrated immersive audio systems by configuring Audio Sources to play multiple sound
+                                effects and background
+                                tracks,
+                                enriching the player experience with context-sensitive audio cues.</li>
+                        </ul>
+                        </p>
+                        <h3 class="statistics-title mt-4">Game Statistics</h3>
+                        <ul class="game-statistics list-unstyled fst-italic">
+                            <li>Engine: Unity</li>
+                            <li>Platform: PC</li>
+                            <li>Genre: 2D Platformer</li>
+                            <li>Team Size: 1</li>
+                            <li>Time Spent on Project: 1 Month </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-12">
+    
+            </div>
+            <h3 class="details-title-1">Under Development</h3>
+    
+            <div class="col-12">
+                <p class="details-text">
+                    I am still currently building this portfolio site and this summary is in the process of being migrated
+                    from an older repository. I am pushing live updates
+                    daily but any specific quesitons please ask me. I'd be more than happy to jump on a call and screen
+                    share anything in the meantime.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-dark text-light">
+        <p>&copy; 2024 Nickolas Rau - All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mainContent = document.querySelector("body > .container"); // Main content container
+            const dropdownItems = document.querySelectorAll(".dropdown-item"); // Dropdown items
+            const homeLink = document.querySelector(".nav-link[href='#']"); // Home link
+            const projectSummaries = document.querySelectorAll("section[id^='project-summary']"); // All project summary sections
+            const videoLinks = document.querySelectorAll("a[data-summary-id]"); // Video links with data-summary-id
+            const tableOfContentsLinks = document.querySelectorAll(".btn-outline-info"); // Table of Contents buttons
+            const headerOffset = 200; // Adjust this value based on your header height
+
+
+            if (document.body.id === "home-page") { // Only apply lazy loading on the homepage
+                const lazySections = document.querySelectorAll("section.d-none");
+
+                // Lazy Loading Sections
+                const sectionObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.remove("d-none"); // Remove 'd-none' when in view
+                            observer.unobserve(entry.target); // Stop observing the section
+                        }
+                    });
+                }, { rootMargin: "0px 0px 500px 0px" }); // Preload sections 200px before entering view
+
+                lazySections.forEach(section => sectionObserver.observe(section)); // Observe each lazy section
+            } else {
+                // On standalone pages, remove d-none immediately
+                document.querySelectorAll("section.d-none").forEach(section => section.classList.remove("d-none"));
+            }
+
+            // Helper function to scroll with an offset
+            function scrollToWithOffset(sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+
+
+                    const elementPosition = target.offsetTop; // Position relative to the document
+                    const offsetPosition = elementPosition - headerOffset;
+
+
+
+                    window.scrollTo({
+                        top: offsetPosition, // Scroll to the calculated offset position
+                        behavior: "smooth", // Enable smooth scrolling
+                    });
+
+                }
+            }
+
+            // Show the correct project summary when a dropdown item or video link is clicked
+            /*[...dropdownItems, ...videoLinks].forEach(item => {
+                item.addEventListener("click", (e) => {
+                    const targetSummaryId = item.getAttribute("data-summary-id");
+    
+                    // Only prevent default if data-summary-id exists
+                    if (targetSummaryId) {
+                        e.preventDefault();
+    
+                        // Hide all project summaries
+                        projectSummaries.forEach(summary => summary.classList.add("d-none"));
+    
+                        // Show the targeted summary
+                        const targetSummary = document.getElementById(targetSummaryId);
+                        if (targetSummary) {
+                            mainContent.style.display = "none"; // Hide main content
+                            targetSummary.classList.remove("d-none"); // Show target summary
+    
+                            // Scroll to the summary section with offset
+                            scrollToWithOffset(targetSummaryId);
+                        }
+                    }
+                });
+            });
+            */
+
+            /*// Restore the homepage content when Home is clicked
+            homeLink.addEventListener("click", (e) => {
+                // Only prevent default if the link doesn't use a standard href
+                if (!homeLink.getAttribute("href") || homeLink.getAttribute("href") === "#") {
+                    e.preventDefault();
+    
+                    // Hide all project summaries
+                    projectSummaries.forEach(summary => summary.classList.add("d-none"));
+    
+                    // Show the main content
+                    mainContent.style.display = "block";
+    
+                    // Scroll to the top of the homepage
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth",
+                    });
+                }
+            });*/
+
+            // Smooth scrolling for Table of Contents buttons
+            tableOfContentsLinks.forEach(button => {
+                button.addEventListener("click", (e) => {
+                    const onclickAttr = button.getAttribute("onclick");
+                    if (onclickAttr) {
+                        e.preventDefault();
+                        const targetSectionId = onclickAttr.match(/'([^']+)'/)[1]; // Extract section ID from onclick attribute
+                        scrollToWithOffset(targetSectionId);
+                    }
+                });
+            });
+
+            // Fullscreen Overlay Logic (Reusable)
+            function addFullscreenOverlay(targetElements) {
+                targetElements.forEach((element) => {
+                    element.addEventListener("click", () => {
+                        const overlay = document.createElement("div");
+                        overlay.className = "fullscreen-overlay";
+                        overlay.innerHTML = `
+                    <div class="overlay-content">
+                        <img src="${element.src}" alt="Fullscreen View">
+                        <button class="close-overlay">X</button>
+                    </div>
+                `;
+                        document.body.appendChild(overlay);
+
+                        // Close the overlay
+                        overlay.querySelector(".close-overlay").addEventListener("click", () => {
+                            document.body.removeChild(overlay);
+                        });
+                    });
+                });
+            }
+
+            // Add Fullscreen Overlay to Any Clickable Image
+            const clickableImages = document.querySelectorAll(".clickable-image");
+            addFullscreenOverlay(clickableImages);
+
+            // Add Fullscreen Overlay to Main Slider Images
+            const mainSlides = document.querySelectorAll(".main-slider .swiper-slide img");
+            addFullscreenOverlay(mainSlides);
+
+            // Add Fullscreen Overlay to Media Images
+            //const mediaImages = document.querySelectorAll(".clickable-image");
+            //addFullscreenOverlay(mediaImages);
+
+            // Main Slider Configuration
+            const mainSlider = new Swiper(".main-slider", {
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                loop: true, // Enable looping for wrap-around functionality
+            });
+
+            const thumbnailSlider = new Swiper(".thumbnail-slider", {
+                spaceBetween: 10,
+                slidesPerView: 3,
+                loop: true, // Enable looping for thumbnail slider as well
+                slideToClickedSlide: true, // Disable thumbnail click functionality
+                allowTouchMove: false, // Disable dragging on thumbnails
+                slideToClickedSlide: true,
+            });
+
+            // Sync Main and Thumbnail Sliders
+            mainSlider.controller.control = thumbnailSlider;
+            thumbnailSlider.controller.control = mainSlider;
+
+            // Add Fullscreen Overlay for Half-Column Slideshow Images
+            const halfColumnMainImages = document.querySelectorAll(".main-slider .swiper-slide img");
+            addFullscreenOverlay(halfColumnMainImages);
+        });
+
+
+    </script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css">
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- Prism.js Language Support for C# -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+</body>
+
+</html>
