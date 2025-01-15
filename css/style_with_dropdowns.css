@@ -176,7 +176,9 @@ header p {
     display: inline-block;
 }
 
-
+.video-padding{
+    padding: 15px;
+}
 
 .description-overlay {
     position: absolute;
@@ -373,6 +375,7 @@ footer {
 
 .details-title-0 {
     font-size: 3rem;
+    font-weight: 600;
     color: #00acee;
     text-shadow:
         -1px -1px 0 #1a1a1a,
@@ -442,6 +445,32 @@ footer {
     /* Ensure bullets match the theme */
 }
 
+.game-statistics-square {
+    list-style-type: square;
+    /* Bulleted list */
+    margin-left: 2rem;
+    /* Indentation for bullets */
+    padding-left: 0;
+    /* Prevent double padding */
+    line-height: 1.8;
+    /* Better readability */
+    font-size: 1.2rem;
+    /* Match previous text size */
+    color: #ffffff;
+    /* Ensure bullets match the theme */
+}
+
+.game-statistics-square li {
+    text-align: left;
+    line-height: 1.2;
+    /* Adjust this value to make lines closer together */
+    margin: 0;
+    /* Optional: Remove extra spacing around the list */
+    padding: 0;
+    /* Optional: Remove extra padding */
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
 /* Bullet Points Styling */
 .game-statistics {
     list-style-type: disc;
@@ -486,6 +515,35 @@ footer {
     margin-bottom: 1rem;
 }
 
+.game-statistics-centered {
+    list-style-type: disc;
+    /* Bulleted list */
+    margin: 0 auto !important;
+    /* Indentation for bullets */
+    padding-left: 0;
+    /* Prevent double padding */
+    line-height: 1.8;
+    /* Better readability */
+    font-size: 1.2rem;
+    /* Match previous text size */
+    color: #ffffff;
+    /* Ensure bullets match the theme */
+    text-align: justify;
+    max-width: 600px;
+}
+
+.game-statistics-centered li {
+    margin-left: 2rem;
+        /* Indentation for list items, adjust as needed */
+        line-height: 1.2;
+        /* Adjust line height for list items */
+        margin-bottom: 1rem;
+        /* Space between list items */
+        color: #ffffff;
+        /* Text color for list items */
+        padding: 0;
+        /* Removes any default padding */
+}
 
 
 /* Fade-in Animation */
@@ -774,12 +832,22 @@ footer {
     font-size: 2rem;
     color: #00acee;
     margin-top: 1rem;
+    font-weight: 600;
 }
 
 .details-title-2 {
     font-size: 1.5rem;
     color: #00acee;
     margin-top: 2rem;
+}
+
+.details-title-sub {
+    font-size: 1.5rem;
+    color: #EFBF04;
+    /* Keeping your color choice */
+    margin-top: 2rem;
+    font-weight: 600;
+    
 }
 
 .details-text-1 {

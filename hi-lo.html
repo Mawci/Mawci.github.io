@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi-Lo</title>
+    <title>Nickolas Rau Portfolio</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for Icons -->
@@ -97,7 +97,7 @@
                 <div class="row mt-4">
                     <div class="col-md-6 text-center">
                         <div class="video-container">
-                            <video class="project-video" autoplay muted loop playsinline>
+                            <video class="summary-video" autoplay muted loop playsinline>
                                 <source src="images/videos/hiloTrailer.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -157,29 +157,601 @@
             <div class="col-12">
 
             </div>
-            <h3 class="details-title-1">Under Development</h3>
 
-            <div class="col-12">
-                <p class="details-text">
-                    I am still currently building this portfolio site and this summary is in the process of being
-                    migrated
-                    from an older repository. I am pushing live updates
-                    daily but any specific quesitons please ask me. I'd be more than happy to jump on a call and screen
-                    share anything in the meantime.
-                </p>
-            </div>
             
 
             <div class="table-of-contents-container container-fluid text-center mt-5">
                 <h2 class="project-title">Table of Contents</h2>
                 <div class="d-flex justify-content-center flex-wrap mt-3">
-                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('summary-2-section-1')">---</button>
-                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('summary-2-section-2')">---</button>
-                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('summary-2-section-3')">---</button>
-                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('summary-2-section-4')">---</button>
+                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('section-1')">Programming</button>
+                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('section-2')">Animations</button>
+                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('section-3')">Additional Features</button>
+                    <button class="btn btn-outline-info m-2" onclick="scrollToSection('section-4')">Retrospective</button>
+                </div>
+            </div>
+
+            <div id="section-1" class="row mt-5">
+                <!-- Left Column: Text Content -->
+                <h3 class="details-title-0">Programming</h3>
+                <h3 class="details-title-1">Initial Planning</h3>
+                <div class="col-md-6">
+                    <p class="details-text">
+                        &emsp;I started by first laying out some quick ideas for the basic construction of the game. Initially, my focus was on two
+                        things.<br>
+                        
+                        &emsp;&emsp;1.&emsp; <strong>A way to compare cards</strong><br>
+                        &emsp;&emsp;2.&emsp; <strong>Selecting a card with a probability</strong><br>
+                    
+                        &emsp;I decided a single card class with an integer to hold the value and a string to hold the suit would be enough to
+                        distinguish between each card. Then I sketched out a small range of numbers to model the probabilities of each card
+                        being drawn. My plan was to generate a number and check if it’s within a certain range. Each range would be sized
+                        differently according to the desired probability. So in this case, with the Ace of Spades needing to be 3 times as
+                        likely to appear, the range would be 3 times as large.
+                    </p>
+                    <!--Full width text area
+                                <p class="details-text">
+                                    This section provides details about the level and game design process, including challenges, techniques, and
+                                    achievements...
+                                </p>-->
+                </div>
+            
+                <div class="col-md-6 text-center">
+                    <img src="images/highlow/problemSolving.jpeg" alt="Project Image" class="img-fluid rounded shadow clickable-image"
+                    loading="">
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <img src="images/highlow/gameFlow.jpeg" alt="Project Image" class="img-fluid rounded shadow clickable-image"
+                        loading="">
+                    </div>
+                    <div class="col-md-6">
+                        <p class="details-text">
+                            &emsp;I also briefly sketched out the flow of the game and the loop. Anticipating simple button down input that will call a
+                            function that compares the two cards and gives a score according to what button was pushed. Then, handle
+                            removing the cards and check if there are still
+                            cards remaining to either deal again or display a game over.
+                        </p>
+                    </div>
+                </div>
+                
+            
+                <!--Right Column: Media Content
+                            <div class="col-md-6 d-flex flex-wrap justify-content-center">
+                                <img src="images/10WTD/whiteBoard1.jpg" alt="Media 1" class="img-thumbnail m-1 clickable-image">
+                                <img src="images/contact.jpg" alt="Media 2" class="img-thumbnail m-1 clickable-image">
+                                <img src="images/C_Sharp_and_Dot_NET.png" alt="Media 3" class="img-thumbnail m-1 clickable-image">
+                                <img src="images/GitHub.png" alt="Media 4" class="img-thumbnail m-1 clickable-image">
+                            </div>-->
+                <h3 class="details-title-1">Card Class</h3>
+                
+                <div class="col-6">
+                    <pre><code class="language-csharp">
+public class Card : MonoBehaviour
+{
+    public Sprite face;
+    public Sprite back;
+                    
+    public int value;
+    public string suit;
+                    
+    private SpriteRenderer sRenderer;
+                    
+    private void Awake()
+    {
+        sRenderer = GetComponent<SpriteRenderer>();
+        sRenderer.sprite = back;
+    }
+                    
+}
+                    </code></pre>
+                </div>
+                <div class="col-md-6">
+                    <p class="details-text">
+                        &emsp;I created a card class with variables for value and suit, plus two sprites for each card's back and face. I then made a
+                        prefab for each card in the editor. My intention was to provide extensibility by allowing custom decks to be created. 
+                        No matter the game, a deck could be created out of a selection of card prefabs. 
+                         
+                    </p>
+                    <div class="justify-content-center">
+                        <video class="summary-video" autoplay muted loop playsinline>
+                            <source src="images/videos/creatingCardPrefab.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <h3 class="details-title-1">Game Manager</h3>
+                <div class="col-md-6">
+                    <p class="details-text">
+                        &emsp;I created a game manager script and object to fully contain all aspects of the game's flow. Within this script I 
+                        wrote the functionality for initializing a new game, dealing cards based on probability, and comparing the cards
+                        when a guess is submitted. In the editor I had public variables:
+                    </p>
+                    <ul class="game-statistics2">
+                        <li>An array to act as the deck, holding all 52 card prefabs
+                        </li>
+                        <li>Position of the deck (off the screen to not be seen)
+                        </li>
+                        <li>Positions for the left and right cards in the game view
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="images/highlow/gameManagerDeckPrefab.png" alt="Project Image" class="img-fluid rounded shadow clickable-image"
+                    loading="">
+                </div>
+                <h3 class="details-title-sub">NewGame()</h3>
+                <div class="col-12 ">
+                    <p class="details-text">
+                        &emsp;On the initial load of the game manager script, NewGame() is called. This function iterates through all of
+                        the card prefabs that were added within the editor, instantiates them, and adds them to a list named currentDeck. It is 
+                        designed to be extensible so that when the hand is over, NewGame() can be called and the player can continue with 
+                        another hand.
+                        <br><br>
+                        I chose the <span style="color: #3498DB;">List&lt; &gt;</span> data structure here as it:
+                    </p>
+                    <ul class="game-statistics-centered">
+                        <li> Would allow for easy additions and fast removal
+                        </li>
+                        <li> Is dynamically sized and can adjust as cards are removed
+                        </li>
+                        <li> Can use LINQ to search based on attributes like suit or value
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 padding-12">
+                    <pre><code class="language-csharp">
+public class GameManager : MonoBehaviour
+{
+    public GameObject[] deckPrefab;
+    public Vector3 deckLocation;
+    public GameObject CardPosLeft;
+    public GameObject CardPosRight;
+
+    private List&lt;GameObject&gt; currentDeck;
+    private GameObject card1;
+    private GameObject card2;
+
+    private void Awake()
+    {
+        NewGame();
+    }
+
+    private void NewGame()
+    {
+        if(currentDeck != null)
+        {
+            currentDeck.Clear();
+            foreach (GameObject card in deckPrefab)
+            {
+                GameObject tempCard = Instantiate(card, deckLocation, Quaternion.identity);
+                currentDeck.Add(tempCard);
+            }
+        }
+        else
+        {
+            currentDeck = new List&lt;GameObject&gt;();
+
+            foreach (GameObject card in deckPrefab)
+            {
+                GameObject tempCard = Instantiate(card, deckLocation, Quaternion.identity);
+                currentDeck.Add(tempCard);
+            }
+        }
+    }
+}
+</code></pre>
+                </div>
+                <h3 class="details-title-sub">DrawCard()</h3>
+                <div class="col-12 ">
+                    <p class="details-text">
+                        &emsp;The DrawCard() function incorporates all the logic for selecting a card given the 
+                        requirements of the exam document. This implementation, however, requires a lot 
+                        of house keeping to ensure edge cases are accounted for and probabilities remain 
+                        consistent while the conditions of the deck change, making it not very
+                        extensible. I spotted an error even when writing this summary, so if I were to 
+                        do this again, I would consider a different approach. 
+                        <br><br>
+                        
+
+                    </p>
+                    <ul class="game-statistics-centered">
+                        <li> <span style="color: green;">Step 1</span>: Go through and set the maximum value the range can be based on the conditions of the deck:
+                            <ul class="game-statistics-square">
+                                <li>If there are normal cards remaining</li>
+                                <li>If there are hearts remaining</li>
+                                <li>If the ace of spades was already drawn</li>
+                            </ul>
+                        </li>
+                        <li> <span style="color: green;">Step 2</span>: Create a pool of cards that meet the conditions of the randomly selected value. For example, if the number fell
+                        within the probability range for a heart, then the selection pool would include all remaining hearts.
+                        </li>
+                        <li><span style="color: green;">Step 3</span>: Randomly select a card from the selection pool (mimics cards being shuffled), update flags according to what
+                        card was just removed from the deck, and return the card.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 padding-12">
+                    <pre><code class="language-csharp">
+public GameObject DrawCard()
+{
+    if (currentDeck.Count == 0) return null;
+
+    bool normalCardsAvailable = currentDeck.Any(c => c.GetComponent&lt;Card&gt;().suit != "Hearts" 
+    && !(c.GetComponent&lt;Card&gt;().value == 1 
+    && c.GetComponent&lt;Card&gt;().suit == "Spades"));
+    int maxRange;
+    
+    //****************************************** STEP 1 ***************************************************
+    if (aceOfSpadesDrawn)
+    {
+        maxRange = heartsAvailable ? (normalCardsAvailable ? 30 : 20) : (normalCardsAvailable ? 10 : 0);
+    }
+    else
+    {
+        maxRange = heartsAvailable ? (normalCardsAvailable ? 60 : 90) : (normalCardsAvailable ? 40 : 1);
+    }
+
+    int randomNumber = Random.Range(1, maxRange + 1);
+    List&lt;GameObject&gt; selectionPool;
+
+    //****************************************** STEP 2 ***************************************************
+    if (randomNumber <= 10 && normalCardsAvailable)
+    {
+        selectionPool = currentDeck.Where(c => c.GetComponent&lt;Card&gt;().suit != "Hearts" 
+        && !(c.GetComponent&lt;Card&gt;().value == 1 
+        && c.GetComponent&lt;Card&gt;().suit == "Spades")).ToList();
+    }
+    else if (randomNumber <= 30 && heartsAvailable)
+    {
+        selectionPool = currentDeck.Where(c => c.GetComponent&lt;Card&gt;().suit == "Hearts").ToList();
+    }
+    else if (randomNumber <= maxRange && !aceOfSpadesDrawn)
+    {
+        selectionPool = currentDeck.Where(c => c.GetComponent&lt;Card&gt;().value == 1 
+        && c.GetComponent&lt;Card&gt;().suit == "Spades").ToList();
+    }
+    else
+    {
+        selectionPool = new List&lt;GameObject&gt;(currentDeck);
+    }
+
+    //****************************************** STEP 3 ***************************************************
+    if (selectionPool.Count > 0)
+    {
+        int index = Random.Range(0, selectionPool.Count);
+        GameObject selectedCard = selectionPool[index];
+        currentDeck.Remove(selectedCard);
+
+        if (selectedCard.GetComponent&lt;Card&gt;().suit == "Spades" 
+        && selectedCard.GetComponent&lt;Card&gt;().value == 1)
+        {
+            aceOfSpadesDrawn = true;
+        }
+
+        if (selectedCard.GetComponent&lt;Card&gt;().suit == "Hearts")
+        {
+            heartsAvailable = currentDeck.Exists(c => c.GetComponent&lt;Card&gt;().suit == "Hearts");
+        }
+
+        return selectedCard;
+    }
+    return null;
+}
+                </code></pre>
+                </div>
+                <h3 class="details-title-sub">CompareCards()</h3>
+                <div class="col-md-6 ">
+                    <p class="details-text">
+                        &emsp;When the player presses one of the buttons in game, a CompareCards() function 
+                        call is made, passing the 2 active cards along with a sting of the guess made.
+                        A check is then made to see if the values are the same. If they are, it calls a 
+                        function to evaluate which suit is higher.<br> 
+
+                        &emsp;To compare the suits, I used a switch statement to assign an
+                        integer value to each suit. <span style="color:#6c757d;"><i>(below)</i></span>   
+                    </p>
+                    <pre><code class="language-csharp">private int GetSuitValue(string suit){
+    switch (suit) {
+        case "Spades": return 4;
+        case "Hearts": return 3;
+        case "Diamonds": return 2;
+        case "Clubs": return 1;
+        default: return 0;}
+}          </code></pre>
+                </div>
+                <div class="col-6">
+                    <pre><code class="language-csharp">private bool CompareCards(GameObject first, GameObject second, string guess) {
+    if (first.GetComponent<Card>().value == second.GetComponent<Card>().value)
+    {
+        return CompareSuits(first, second, guess);
+    }
+    else
+    {
+        if (guess == "higher")
+        {
+            return second.GetComponent<Card>().value > first.GetComponent<Card>().value;
+        }
+        else
+        {
+            return second.GetComponent<Card>().value < first.GetComponent<Card>().value;
+        }
+    }
+}</code></pre>
+                </div>
+            
+                    <div class="col-12 text-center">
+                        <button class="btn btn-outline-info" onclick="scrollToSection('project-summary-3')">Top</button>
+                    </div>
+                </div>
+            
+                <!-- Full-Width Programming Section -->
+                <div id="section-2" class="row mt-5">
+                    <h3 class="details-title-0">Animations</h3>
+                    <h3 class="details-title-1">Buttons</h3>
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <p class="details-text">
+                                &emsp; I wanted to add some feedback for the user when interacting with the buttons. Particularly when
+                                hovering and pushing them. Therefore, I made button game objects with custom scripts that reside in the game world. To
+                                do this I added a sprite renderer, box collider and imported a tweening library called iTween. 
+                                <br><br>
+                            </p>
+    <pre><code class="language-csharp">
+//Hovering 
+private void OnMouseEnter(){
+sRenderer.sprite = hoverSprite;
+iTween.ScaleTo(gameObject, iTween.Hash("scale", scaleTo, "time", scaleTime,
+"looptype", iTween.LoopType.pingPong, "easetype", iTween.EaseType.linear));
+AudioSource.PlayClipAtPoint(hoverSound, new Vector3(0, 0, 0));
+}
+
+//Pressing
+private void OnMouseDown()
+{
+    AudioSource.PlayClipAtPoint(pressSound, new Vector3(0, 0, 0));
+    iTween.PunchScale(gameObject, new Vector3(punchScale, punchScale, punchScale), punchScaleTime);
+}
+</code></pre>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <video class="summary-video" autoplay muted loop playsinline>
+                                <source src="images/videos/buttonHover2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <video class="summary-video padding-12" autoplay muted loop playsinline>
+                                <source src="images/videos/buttonPress2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+
+                    <h3 class="details-title-1">Cards</h3>
+                    <div class="row">
+                    
+                        <div class="col-md-6">
+                            <p class="details-text">
+                                &emsp; Initially, I had it coded to change the position of the cards from the deck to the game view. This made it seem
+                                that cards just “appeared” out of nowhere. It didn’t impact the way the game was played, however I added an iTween script
+                                to interpolate the position of the cards offscreen to the game view. This was able to give the
+                                impression of cards being dealt.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <video class="summary-video" autoplay muted loop playsinline>
+                                <source src="images/videos/dealAnimation.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+            
+                    <div class="col-12 padding-12">
+                        <p class="details-text text-justify">
+                            &emsp;The first card 'flip' animation simply swapped the sprite displayed by the sprite renderer. Making the sprite smoothly
+                            give the 'flipping' effect was a bit more challenging. I couldn’t use the iTweening library because it lacked the
+                            flexibility I needed. Therefore, I created a coroutine with <span style="color: yellow;">Mathf.Lerp()</span> to perform half the rotation, swap the sprite,
+                            and then rotate back to the starting position. This method worked well and effectively created the impression of the
+                            card flipping. However, if you look closely, there is 'popping' that occurs with the left side of the card and the
+                            shadowing effect, due to how Unity rendering layers work
+                        </p>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12 d-flex flex-wrap justify-content-center">
+                            <div class="col-md-6 video-padding">
+
+                                <video class="summary-video" autoplay muted loop playsinline>
+                                    <source src="images/videos/spriteChange.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <p class="caption-text">Before</p>
+                            </div>
+                            <div class="col-md-6 video-padding">
+                            
+                                <video class="summary-video" autoplay muted loop playsinline>
+                                    <source src="images/videos/flipAnimation.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <p class="caption-text">After</p>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- Scroll to Top Button -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-outline-info" onclick="scrollToSection('project-summary-3')">Top</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Full-Width UI/HUD -->
+            <div id="section-3" class="row mt-5">
+                <h3 class="details-title-0">Additional Features</h3>
+                <h3 class="details-title-1">Score Numbers</h3>
+                <div class="col-md-6">
+                    <p class="details-text text-justify">
+                        &emsp;I wanted a way to visually display score increasing for the player, to make 
+                        it feel more like a game.  
+                    <ul class="game-statistics2">
+                        <li>Imported and learned a new package from the Unity asset store called
+                        DamageNumbersPro.
+                        </li>
+                        <li>Created number prefabs within the editor for each
+                        card and the streaking system
+                        </li>
+                        <li>Coded them to be spawned when
+                        the player guessed correctly</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="images/highlow/scorePrefabs.png" alt="Project Image"
+                        class="img-fluid rounded shadow clickable-image" loading="">
+                </div>
+                <div class="col-12 justify-content-center">
+                    <video class="summary-video" autoplay muted loop playsinline>
+                        <source src="images/videos/scoreNumbers.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                </div>
+                <h3 class="details-title-1">Static Score Manager</h3>
+                <div class="col-md-6">
+                    <p class="details-text text-justify">
+                    I implemented the Score Manager as a static instance to allow other scripts easy access to its functions. This script
+                    centralizes all the logic necessary for features such as:
+
+                        <ul class="game-statistics2">
+                            <li><span style="color:yellow;">Updating current streak graphic</span> 
+                            </li>
+                            <li><span style="color:yellow;">Adding score</span>
+                            </li>
+                            <li><span style="color:yellow;">Counting the number correct</span></li>
+                            <li><span style="color:yellow;">Calculating longest streak</span></li>
+                            <li><span style="color:yellow;">Displaying game over statistics</span></li>
+                        </ul>
+            
+                    </p>
+                    
+                </div>
+                <div class="col-md-6 ">
+                    <div class="d-flex justify-content-start align-items-start flex-wrap">
+                        <div class="text-center m-2">
+                            <img src="images//highlow/singletonSM.png" alt="Media 1" class="img-thumbnail m-1 clickable-image" loading="">
+                            <p class="caption-text">Static Class Creation</p>
+                        </div>
+                        <div class="text-center m-2">
+                            <img src="images//highlow/AddScoreHighScore.png" alt="Media 1" class="img-thumbnail m-1 clickable-image" loading="">
+                            <p class="caption-text">Add Score & High Score</p>
+                        </div>
+                        <div class="text-center m-2">
+                            <img src="images//highlow/updateStreakFunction.png" alt="Media 1" class="img-thumbnail m-1 clickable-image" loading="">
+                            <p class="caption-text">Update Current Streak</p>
+                        </div>
+                        <!--<div class="text-center m-2">
+                            <img src="images//highlow/StreakSprites.png" alt="Media 1" class="img-thumbnail m-1 clickable-image"
+                                loading="">
+                            <p class="caption-text">Streak Sprites</p>
+                        </div>-->
+                    </div>
+                    
+                    
+                
+                </div>
+            
+                
+                <div class="col-12 d-flex flex-wrap justify-content-center">
+                    <div class="image-grid-row">
+                        <img src="images/highlow/StreakSprites.png" alt="Image 1" class="summary-image clickable-image">
+                        <video class="summary-video" autoplay muted loop playsinline>
+                            <source src="images/videos/gameOverScore.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                    </div>
+                </div>
+                
+                
+                
+            
+                <!-- Scroll to Top Button -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-outline-info" onclick="scrollToSection('project-summary-3')">Top</button>
+                    </div>
+                </div>
+            
+            </div>
+            
+            
+            <!-- Retrospective Section -->
+            <div id="section-4" class="row mt-5">
+                <h3 class="details-title-0">Retrospective</h3>
+                <div class="retrospective mt-5">
+                    <!-- What Went Well Section -->
+                    <div class="retrospective-section">
+                        <h4>What went well</h4>
+                        <ul>
+                            <li>Choosing a list data structure for the deck proved invaluable as I queried the conditions of the deck often, with ease
+                            </li>
+                            <li>Using a switch statement to return an integer value for each suit was successful for determining hierarchy </li>
+                            <li>Initial concept and whiteboarding was detailed enough to guide programming and deliver a finished game within the timeframe
+                            </li>
+                            <li>UI feedback and interactions felt meaningful and well telegraphed</li>
+                            <li>Animations gave the impression of cards being “dealt”</li>
+                            
+                        </ul>
+                    </div>
+            
+                    <!-- What Went Wrong Section -->
+                    <div class="retrospective-section">
+                        <h4>What went wrong</h4>
+                        <ul>
+                            <li>My implementation of determining likelihood required a lot of housekeeping and was prone to errors. When writing this
+                            summary I found 3 places in the logic that didn’t properly account for edge cases and I needed to revise the code.</li>
+                            <li>Making object buttons within the game world allowed for a customized feel, but introduced a bug with detecting
+                                mouse hover events after a mouse down event. This resulted in no hover animations.  
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <!-- What I Learned Section -->
+                    <div class="retrospective-section">
+                        <h4>What I learned</h4>
+                        <ul>
+                            <li>A stonger approach to determining edge cases and a thorough way of stepping through each outcome when
+                            working with probability</li>
+                            <li>How to use a tweening library to animate game objects</li>
+                            <li>Situations where a tweening library doesn't fit and how to code a custom behavior</li>
+                            <li>How to create number prefabs in the editor and dynamically spawn them in the game world
+                            </li>
+                            <li>PlayerPrefs in Unity and how to store / retrieve data like high score 
+                            </li>
+                            <li>Familiarity with importing custom fonts and creating assets for them
+                            </li>
+                            <li>In this situation, my code worked fine, but moving forward, it would be more efficient to cache a reference to any 
+                                object that I am using
+                                .GetComonent<>() on multiple times. 
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll to Top Button -->
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <button class="btn btn-outline-info" onclick="scrollToSection('project-summary-3')">Top</button>
                 </div>
             </div>
         </div>
+        
     </section>
 
     <!-- Footer -->
@@ -238,52 +810,7 @@
                 }
             }
 
-            // Show the correct project summary when a dropdown item or video link is clicked
-            /*[...dropdownItems, ...videoLinks].forEach(item => {
-                item.addEventListener("click", (e) => {
-                    const targetSummaryId = item.getAttribute("data-summary-id");
-    
-                    // Only prevent default if data-summary-id exists
-                    if (targetSummaryId) {
-                        e.preventDefault();
-    
-                        // Hide all project summaries
-                        projectSummaries.forEach(summary => summary.classList.add("d-none"));
-    
-                        // Show the targeted summary
-                        const targetSummary = document.getElementById(targetSummaryId);
-                        if (targetSummary) {
-                            mainContent.style.display = "none"; // Hide main content
-                            targetSummary.classList.remove("d-none"); // Show target summary
-    
-                            // Scroll to the summary section with offset
-                            scrollToWithOffset(targetSummaryId);
-                        }
-                    }
-                });
-            });
-            */
-
-            /*// Restore the homepage content when Home is clicked
-            homeLink.addEventListener("click", (e) => {
-                // Only prevent default if the link doesn't use a standard href
-                if (!homeLink.getAttribute("href") || homeLink.getAttribute("href") === "#") {
-                    e.preventDefault();
-    
-                    // Hide all project summaries
-                    projectSummaries.forEach(summary => summary.classList.add("d-none"));
-    
-                    // Show the main content
-                    mainContent.style.display = "block";
-    
-                    // Scroll to the top of the homepage
-                    window.scrollTo({
-                        top: 0,
-                        behavior: "smooth",
-                    });
-                }
-            });*/
-
+            
             // Smooth scrolling for Table of Contents buttons
             tableOfContentsLinks.forEach(button => {
                 button.addEventListener("click", (e) => {
@@ -346,7 +873,7 @@
                 loop: true, // Enable looping for thumbnail slider as well
                 slideToClickedSlide: true, // Disable thumbnail click functionality
                 allowTouchMove: false, // Disable dragging on thumbnails
-                slideToClickedSlide: true,
+        
             });
 
             // Sync Main and Thumbnail Sliders
